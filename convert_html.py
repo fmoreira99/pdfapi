@@ -7,7 +7,7 @@ import tempfile
 import os  # Importar el módulo os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
 
 @app.route('/pdf', methods=['POST'])
 def convert_html_to_pdf():
